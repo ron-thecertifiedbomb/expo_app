@@ -1,8 +1,13 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import ImageComponent from "@/components/ImageComponent"; // Adjust the import path accordingly
+import ImageComponent from "@/components/ImageComponent";
+import useFetchData from "@/hooks/useFetchData";
 
 const HomeScreen: React.FC = () => {
+  const { basicInfo } = useFetchData();
+
+  console.log("Basic Information", basicInfo);
+
   return (
     <View style={styles.container}>
       <ImageComponent

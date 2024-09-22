@@ -1,15 +1,16 @@
+import { basicInformationAtom } from "@/store/basicInformationAtom";
+import { useAtom } from "jotai";
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 const UsersScreen: React.FC = () => {
+
+  const [basicInfo] = useAtom(basicInformationAtom)
+
+  console.log("Basic Information", basicInfo);
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("@/assets/images/react.png")}
-          style={styles.reactLogo}
-        />
-      </View>
+      
     </View>
   );
 };
@@ -23,13 +24,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  imageContainer: {
-    height: 100,
-    width: 100,
-  },
 
-  reactLogo: {
-    height: "100%",
-    width: "100%",
-  },
 });
