@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 
-const HomeScreen: React.FC = () => {
+const UsersScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -14,7 +14,7 @@ const HomeScreen: React.FC = () => {
   );
 };
 
-export default HomeScreen;
+export default UsersScreen;
 
 const styles = StyleSheet.create({
   container: {
