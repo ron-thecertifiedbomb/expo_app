@@ -1,4 +1,4 @@
-interface Specifications {
+export interface Specifications {
     processor?: string;
     graphics?: string;
     storage?: string;
@@ -10,7 +10,7 @@ interface Specifications {
     size?: string;
   }
   
-  interface Product {
+  export interface Product {
     productName: string;
     manufacturer: string;
     price: number;

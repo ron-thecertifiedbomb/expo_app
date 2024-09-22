@@ -1,5 +1,5 @@
 import UsersList from "@/components/UserList";
-import { DataAtom } from "@/store/dataAtom";
+import { allProductsAtom } from "@/store/productsAtom";
 import { useAtom } from "jotai";
 import React, { useEffect } from "react";
 import { View, Text } from "react-native";
@@ -7,7 +7,8 @@ import { View, Text } from "react-native";
 const URL = "https://nextjs-server-rho.vercel.app/api/products/getAllProducts/route";
 
 const TestScreen = () => {
-  const [, setData] = useAtom(DataAtom);
+
+  const [, setData] = useAtom(allProductsAtom);
 
   const FetchData = async () => {
     const res = await fetch(URL);
@@ -18,12 +19,14 @@ const TestScreen = () => {
     FetchData();
   }, []);
 
+
+
   return (
     <>
       <View>
         <Text>Fake Users Ftech Using Jotai</Text>
       </View>
- <UsersList />     
+ {/* <UsersList />     */}
     </>
   );
 };

@@ -23,8 +23,7 @@ export default ImageComponent;
 
 const styles = StyleSheet.create({
   imageContainer: {
-    height: 100,
-    width: 100,
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
