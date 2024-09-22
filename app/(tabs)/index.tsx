@@ -1,15 +1,14 @@
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet } from "react-native";
+import ImageComponent from "@/components/ImageComponent"; // Adjust the import path accordingly
 
 const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("@/assets/images/react.png")}
-          style={styles.reactLogo}
-        />
-      </View>
+      <ImageComponent
+        source={require("@/assets/images/react.png")}
+        containerStyle={styles.imageContainer}
+      />
     </View>
   );
 };
@@ -26,10 +25,5 @@ const styles = StyleSheet.create({
   imageContainer: {
     height: 100,
     width: 100,
-  },
-
-  reactLogo: {
-    height: "100%",
-    width: "100%",
   },
 });
