@@ -2,6 +2,7 @@
   "name": "expo_app",
   "main": "expo-router/entry",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
@@ -10,7 +11,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "clean:android": "./gradlew clean"  // Add this line
+    "clean": "expo start -c"
   },
   "jest": {
     "preset": "jest-expo"
