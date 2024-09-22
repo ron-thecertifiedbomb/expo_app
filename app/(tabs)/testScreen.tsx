@@ -2,9 +2,9 @@ import UsersList from "@/components/UserList";
 import { DataAtom } from "@/store/dataAtom";
 import { useAtom } from "jotai";
 import React, { useEffect } from "react";
-import {  View, Text } from "react-native";
+import { View, Text } from "react-native";
 
-const URL = "https://jsonplaceholder.typicode.com/users";
+const URL = "https://nextjs-server-rho.vercel.app/api/products/getAllProducts/route";
 
 const TestScreen = () => {
   const [, setData] = useAtom(DataAtom);
@@ -20,9 +20,10 @@ const TestScreen = () => {
 
   return (
     <>
-    <View><Text>Fake Users Ftech Using Jotai</Text></View>
-      
-      <UsersList />
+      <View>
+        <Text>Fake Users Ftech Using Jotai</Text>
+      </View>
+ <UsersList />     
     </>
   );
 };
