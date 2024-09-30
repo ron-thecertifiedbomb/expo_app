@@ -1,19 +1,30 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import ImageComponent from "@/components/ImageComponent";
-import useFetchData from "@/hooks/useFetchData";
+import useGetAllProducts from "@/hooks/useGetAllProducts";
+import { useAtom } from "jotai";
+import { allProductsAtom } from "@/store/productsAtom";
+import LoadingComponent from "@/components/LoadingComponent"; // Adjust the import path
 
 const HomeScreen: React.FC = () => {
-  const { basicInfo } = useFetchData();
+  const { loading, error } = useGetAllProducts();
+  const [allProducts] = useAtom(allProductsAtom);
 
-  console.log("Basic Information", basicInfo);
+  const productsAvailable = Array.isArray(allProducts) && allProducts.length > 0;
 
   return (
     <View style={styles.container}>
-      <ImageComponent
+      <LoadingComponent
+        loading={loading}
+        error={error}
+        productsAvailable={productsAvailable} 
+      />
+
+      
+      {/* <ImageComponent
         source={require("@/assets/images/react.png")}
         containerStyle={styles.imageContainer}
-      />
+      /> */}
     </View>
   );
 };
@@ -32,3 +43,4 @@ const styles = StyleSheet.create({
     width: 100,
   },
 });
+
