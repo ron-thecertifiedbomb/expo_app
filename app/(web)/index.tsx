@@ -19,7 +19,7 @@ export default function WebHome() {
   return (
     <ThemeProvider value={combinedTheme}>
       <View>
-        <Text style={styles.heading1}>Tabs Index.tsx</Text>
+        <Text style={styles.heading1}>Web Index.tsx</Text>
       </View>
     </ThemeProvider>
   );
@@ -31,23 +31,5 @@ const styles = StyleSheet.create({
     fontSize: fonts.heading.h1.fontSize,
     fontFamily: fonts.heading.h1.fontFamily,
     lineHeight: fonts.heading.h1.lineHeight, // Ensure this is a number
-  },
-  heading2: {
-    fontSize: fonts.heading.h2.fontSize,
-    fontFamily: fonts.heading.h2.fontFamily,
-    lineHeight: fonts.heading.h2.lineHeight,
-    letterSpacing: fonts.heading.h2.letterSpacing,
-  },
-  heading3: {
-    fontSize: fonts.heading.h3.fontSize,
-    fontFamily: fonts.heading.h3.fontFamily,
-    lineHeight: fonts.heading.h3.lineHeight,
-    letterSpacing: fonts.heading.h3.letterSpacing,
-  },
-  heading4: {
-    fontSize: fonts.heading.h4.fontSize,
-    fontFamily: fonts.heading.h4.fontFamily,
-    lineHeight: fonts.heading.h4.lineHeight,
-    letterSpacing: fonts.heading.h4.letterSpacing,
-  },
+  }
 });
