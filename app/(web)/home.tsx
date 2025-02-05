@@ -29,8 +29,8 @@ export default function WebHome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center", // Center vertically
-    alignItems: "center", // Center horizontally
+    justifyContent: "center", 
+    alignItems: "center", 
   },
   heading4: {
     fontSize: fonts.heading.h4.fontSize,
