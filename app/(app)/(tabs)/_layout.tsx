@@ -3,21 +3,21 @@ import { Tabs } from "expo-router";
 export default function TabsLayout() {
   return (
     <Tabs
-      initialRouteName='home'
+      initialRouteName="home"
       screenOptions={{ tabBarActiveTintColor: "blue" }}
     >
       <Tabs.Screen
-        name= 'home'
+        name="home"
         options={{
-          title: 'Home',
-          headerShown: false
+          title: "Home",
+          headerShown: false,
         }}
       />
       <Tabs.Screen
-        name= 'settings'
+        name="settings"
         options={{
-          title: 'Settings',
-          headerShown: false
+          title: "Settings",
+          headerShown: false,
         }}
       />
     </Tabs>

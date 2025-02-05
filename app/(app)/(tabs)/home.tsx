@@ -1,8 +1,9 @@
+import { fonts } from '@/constants/Fonts';
 import { View, Text, StyleSheet } from 'react-native';
 
 const Home = () => (
   <View style={styles.container}>
-    <Text style={styles.text}>Home</Text>
+    <Text style={styles.heading4}>Home</Text>
   </View>
 );
 
@@ -12,9 +13,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {
-    fontSize: 18, 
-    fontWeight: 'bold',
+  heading4: {
+    fontSize: fonts.heading.h4.fontSize,
+    fontFamily: fonts.heading.h4.fontFamily,
+    lineHeight: fonts.heading.h4.lineHeight, // Ensure this is a number
   },
 });
 
