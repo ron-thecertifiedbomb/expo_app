@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   DarkTheme,
   DefaultTheme,
@@ -8,9 +8,7 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 import { Text, View, StyleSheet } from "react-native";
 import { fonts } from "@/constants/Fonts";
 
-
-export default function WebHome() {
-
+export default function AppHome() {
   const colorScheme = useColorScheme();
   const currentTheme = colorScheme === "dark" ? DarkTheme : DefaultTheme;
   const combinedTheme = {
@@ -21,11 +19,12 @@ export default function WebHome() {
   return (
     <ThemeProvider value={combinedTheme}>
       <View>
-        <Text style={styles.heading1}>Web Index app.tsx</Text>
+        <Text style={styles.heading1}>Tabs Index.tsx</Text>
       </View>
     </ThemeProvider>
   );
 }
+
 
 // Define styles using StyleSheet
 const styles = StyleSheet.create({
@@ -33,5 +32,6 @@ const styles = StyleSheet.create({
     fontSize: fonts.heading.h1.fontSize,
     fontFamily: fonts.heading.h1.fontFamily,
     lineHeight: fonts.heading.h1.lineHeight, // Ensure this is a number
-  }
+  },
+  
 });
