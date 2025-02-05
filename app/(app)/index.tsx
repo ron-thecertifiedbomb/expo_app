@@ -5,8 +5,8 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Text, View, StyleSheet, Button } from "react-native"; // Import Button
-import { useRouter } from "expo-router"; // Import useRouter hook
+import { Text, View, StyleSheet} from "react-native"; // Import Button
+
 import { fonts } from "@/constants/Fonts";
 
 export default function WebHome() {
@@ -17,14 +17,11 @@ export default function WebHome() {
     fonts,
   };
 
-  // Access the router
 
   return (
     <ThemeProvider value={combinedTheme}>
       <View style={styles.container}>
-        <Text style={styles.heading1}>App Index app.tsx</Text>
-  
-   
+        <Text style={styles.heading1}>App Index</Text>
       </View>
     </ThemeProvider>
   );

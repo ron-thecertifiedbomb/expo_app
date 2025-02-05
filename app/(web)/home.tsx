@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   DarkTheme,
   DefaultTheme,
@@ -18,8 +18,8 @@ export default function WebHome() {
 
   return (
     <ThemeProvider value={combinedTheme}>
-      <View>
-        <Text style={styles.heading1}>Web Index.tsx</Text>
+      <View style={styles.container}>
+        <Text style={styles.heading1}>Web Home</Text>
       </View>
     </ThemeProvider>
   );
@@ -27,9 +27,14 @@ export default function WebHome() {
 
 // Define styles using StyleSheet
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center", // Center vertically
+    alignItems: "center", // Center horizontally
+  },
   heading1: {
     fontSize: fonts.heading.h1.fontSize,
     fontFamily: fonts.heading.h1.fontFamily,
     lineHeight: fonts.heading.h1.lineHeight, // Ensure this is a number
-  }
+  },
 });
