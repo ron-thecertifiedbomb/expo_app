@@ -9,18 +9,19 @@ import { Text, View, StyleSheet, Button } from "react-native";
 import { fonts } from "@/constants/Fonts";
 import { Redirect, useRouter } from "expo-router";
 
-export default function WebHome() {
+export default function ProfileScreen() {
   const colorScheme = useColorScheme();
   const currentTheme = colorScheme === "dark" ? DarkTheme : DefaultTheme;
   const combinedTheme = {
     ...currentTheme,
     fonts,
   };
-  const router = useRouter();
+const router = useRouter();
   return (
     <ThemeProvider value={combinedTheme}>
       <View style={styles.container}>
-        <Text style={styles.heading4}>Desktop</Text>
+        <Text style={styles.heading4}>Profile Screen</Text>
+        <Button title="Go to Home" onPress={() => <Redirect href="/(web)/home"  />} />
       </View>
     </ThemeProvider>
   );

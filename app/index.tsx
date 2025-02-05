@@ -6,6 +6,6 @@ export default function RootIndex() {
   if (Platform.OS === "web") {
     return <Redirect href="/(web)/home" />;
   } else {
-    return <Redirect href="/(app)/" />;
+    return <Redirect href='/(app)/'/>;
   }
 }

@@ -1,11 +1,25 @@
-import { Slot, Redirect } from "expo-router";
-import React from "react";
+import { Redirect, Stack } from "expo-router";
 import { Platform } from "react-native";
 
-export default function AppLayout() {
+export default function RootLayout() {
   if (Platform.OS === "web") {
     return <Redirect href="/(web)/home" />;
+  } else {
+    return (
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: "transparent" },
+        }}
+      >
+        <Stack.Screen
+          name='(tabs)'
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen name='settings' options={{ headerShown: false }} />
+      </Stack>
+    );
   }
-
-  return <Slot />;
 }
