@@ -5,9 +5,9 @@ import { Platform } from "react-native";
 export default function RootIndex() {
   if (Platform.OS === "web") {
     // Redirect to the web route
-    return <Redirect href="/(web)/home" />;
+    return <Redirect href="/(web)/home"/>;
   } else {
     // Redirect to the mobile route
-    return <Redirect href="/(app)/home" />;
+    return <Redirect href="/(app)/"/>;
   }
 }

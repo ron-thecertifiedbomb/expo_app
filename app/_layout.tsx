@@ -4,8 +4,7 @@ import { useEffect, Suspense, useState } from "react";
 import "react-native-reanimated";
 import React from "react";
 import { Slot } from "expo-router";
-import { View, Text, ActivityIndicator } from "react-native"; // Import UI components for fallback
-import useDetectDeviceAndNavigate from "@/helper.tsx/utilities"; // Import the navigation hook
+import { View, Text } from "react-native"; // Import UI components for fallback
 
 SplashScreen.preventAutoHideAsync();
 
