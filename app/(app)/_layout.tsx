@@ -1,10 +1,11 @@
-import RoutingComponent from "@/components/RoutingComponent";
-import { Slot } from "expo-router";
-import React, { Suspense } from "react"; // Import Suspense
-import { View } from "react-native";
-
-// Fallback UI: A loading spinner or any other UI to show while content is loading
+import { Slot, Redirect } from "expo-router";
+import React from "react";
+import { Platform } from "react-native";
 
 export default function AppLayout() {
+  if (Platform.OS === "web") {
+    return <Redirect href="/(web)/home" />;
+  }
+
   return <Slot />;
 }
