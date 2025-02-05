@@ -1,29 +1,29 @@
 export interface RootObject {
- address:  Address;
- company:  Company;
- email:    string;
- id:       number;
- name:     string;
- phone:    string;
- username: string;
- website:  string;
+  address: Address;
+  company: Company;
+  email: string;
+  id: number;
+  name: string;
+  phone: string;
+  username: string;
+  website: string;
 }
 
 export interface Address {
- city:    string;
- geo:     Geo;
- street:  string;
- suite:   string;
- zipcode: string;
+  city: string;
+  geo: Geo;
+  street: string;
+  suite: string;
+  zipcode: string;
 }
 
 export interface Geo {
- lat: string;
- lng: string;
+  lat: string;
+  lng: string;
 }
 
 export interface Company {
- bs:          string;
- catchPhrase: string;
- name:        string;
+  bs: string;
+  catchPhrase: string;
+  name: string;
 }

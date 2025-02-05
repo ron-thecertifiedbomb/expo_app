@@ -15,12 +15,12 @@ const UsersList = () => {
 
   return (
     <View style={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold' }}>Users</Text>
+      <Text style={{ fontSize: 24, fontWeight: "bold" }}>Users</Text>
       <Text style={{ marginTop: 8 }}>Filter Users:</Text>
       <TextInput
         style={{
           height: 40,
-          borderColor: 'gray',
+          borderColor: "gray",
           borderWidth: 1,
           marginTop: 8,
           paddingHorizontal: 8,

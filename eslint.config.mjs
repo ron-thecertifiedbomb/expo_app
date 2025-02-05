@@ -17,11 +17,13 @@ const config = [
       },
     },
     rules: {
-      "no-unused-vars": ["warn", { vars: "all", args: "after-used", ignoreRestSiblings: true }],
+      "no-unused-vars": [
+        "warn",
+        { vars: "all", args: "after-used", ignoreRestSiblings: true },
+      ],
       // Add other rules here
     },
   },
 ];
 
 export default config;
-

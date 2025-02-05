@@ -2,9 +2,9 @@ import React from "react";
 import { View, StyleSheet, Image, ImageStyle, ViewStyle } from "react-native";
 
 interface ImageComponentProps {
-  source: any; 
-  style?: ImageStyle; 
-  containerStyle?: ViewStyle; 
+  source: any;
+  style?: ImageStyle;
+  containerStyle?: ViewStyle;
 }
 
 const ImageComponent: React.FC<ImageComponentProps> = ({
@@ -14,7 +14,11 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
 }) => {
   return (
     <View style={[styles.imageContainer, containerStyle]}>
-      <Image source={source} style={[styles.image, style]} resizeMode="contain" />
+      <Image
+        source={source}
+        style={[styles.image, style]}
+        resizeMode="contain"
+      />
     </View>
   );
 };

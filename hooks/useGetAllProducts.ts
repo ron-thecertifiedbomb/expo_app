@@ -4,7 +4,8 @@ import { allProductsAtom } from "@/store/productsAtom";
 import { Product } from "@/interfaces/products/products"; // Adjust the import based on your structure
 
 const useGetAllProducts = () => {
-  const URL = "https://nextjs-server-rho.vercel.app/api/products/getAllProducts/route";
+  const URL =
+    "https://nextjs-server-rho.vercel.app/api/products/getAllProducts/route";
   const [, setData] = useAtom(allProductsAtom);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null); // Type for error
@@ -18,7 +19,9 @@ const useGetAllProducts = () => {
         const resJson: Product[] = await res.json(); // Specify the expected type
         setData(resJson);
       } catch (error) {
-        setError(error instanceof Error ? error.message : "An unknown error occurred");
+        setError(
+          error instanceof Error ? error.message : "An unknown error occurred",
+        );
       } finally {
         setLoading(false);
       }
@@ -31,4 +34,3 @@ const useGetAllProducts = () => {
 };
 
 export default useGetAllProducts;
-

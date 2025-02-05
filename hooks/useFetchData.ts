@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { useAtom } from 'jotai';
-import { RootObject } from '@/interfaces/users/basicInformation';
-import { basicInformationAtom } from '@/store/basicInformationAtom';
+import { useEffect } from "react";
+import { useAtom } from "jotai";
+import { RootObject } from "@/interfaces/users/basicInformation";
+import { basicInformationAtom } from "@/store/basicInformationAtom";
 
 const fetchData = async (): Promise<RootObject> => {
-  const response = await fetch('http://localhost:3000/employeeData'); 
+  const response = await fetch("http://localhost:3000/employeeData");
   if (!response.ok) {
-    throw new Error('Failed to fetch basic information');
+    throw new Error("Failed to fetch basic information");
   }
   return response.json();
 };
@@ -18,15 +18,14 @@ const useFetchData = () => {
     const getBasicInformation = async () => {
       try {
         const data = await fetchData();
-        setBasicInfo(data); 
+        setBasicInfo(data);
       } catch (error) {
-        console.error('Error fetching basic information:', error);
-      
+        console.error("Error fetching basic information:", error);
       }
     };
 
     getBasicInformation();
-  }, [setBasicInfo]); 
+  }, [setBasicInfo]);
 
   return { basicInfo };
 };
