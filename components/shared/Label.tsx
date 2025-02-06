@@ -2,6 +2,7 @@ import { Text, type TextProps, StyleSheet } from "react-native";
 import { useThemeColor } from "@/hooks/useThemeColor";
 
 export type LabelProps = TextProps & {
+  customTextStyle?: object;
   lightColor?: string;
   darkColor?: string;
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
@@ -9,7 +10,7 @@ export type LabelProps = TextProps & {
 };
 
 const Label: React.FC<LabelProps> = ({
-  style,
+  customTextStyle,
   lightColor,
   darkColor,
   type = "default",
@@ -27,7 +28,7 @@ const Label: React.FC<LabelProps> = ({
         type === "defaultSemiBold" && styles.defaultSemiBold,
         type === "subtitle" && styles.subtitle,
         type === "link" && styles.link,
-        style,
+        customTextStyle,
       ]}
       {...rest}
     >

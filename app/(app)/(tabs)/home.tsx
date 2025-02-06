@@ -7,7 +7,7 @@ import { StyleSheet } from "react-native";
 const Home = () => (
   <Container>
     <Icon name="home" size={40} color="grey" type="AntDesign" />
-    <Label lightColor="grey" style={styles.heading4} text="Home" />
+    <Label lightColor="grey" customTextStyle={styles.heading4} text="Home" />
   </Container>
 );
 

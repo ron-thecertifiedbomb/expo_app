@@ -7,7 +7,7 @@ import { StyleSheet } from "react-native";
 const Settings = () => (
   <Container>
     <Icon name="settings-outline" size={41} color="grey" type="Ionicons" />
-    <Label lightColor="grey" style={styles.heading4} text="Settings" />
+    <Label lightColor="grey" customTextStyle={styles.heading4} text="Settings" />
   </Container>
 );
 
