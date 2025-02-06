@@ -1,29 +1,21 @@
 import React from "react";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
-import { useColorScheme } from "@/hooks/useColorScheme";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { fonts } from "@/constants/Fonts";
 import Container from "@/components/shared/Container";
 import Label from "@/components/shared/Label";
+import useIsMobile from "@/helper.tsx/useMoblie";
 
 export default function WebHome() {
-  const colorScheme = useColorScheme();
-  const currentTheme = colorScheme === "dark" ? DarkTheme : DefaultTheme;
-  const combinedTheme = {
-    ...currentTheme,
-    fonts,
-  };
+  
+  const isMobile = useIsMobile(); // Call the hook to get the boolean value
+  const text = isMobile ? "Mobile View" : "Desktop View";
+
+  // Dynamically determine styles based on `isMobile`
 
   return (
-    <ThemeProvider value={combinedTheme}>
-      <Container>
-        <Label lightColor="grey" customTextStyle={styles.heading4} text="Home Screen" />
-      </Container>
-    </ThemeProvider>
+    <Container>
+      <Label lightColor="grey" customTextStyle={styles.heading4} text={text} />
+    </Container>
   );
 }
 
