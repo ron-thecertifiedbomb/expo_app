@@ -8,6 +8,7 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 import {  View, StyleSheet } from "react-native";
 import { fonts } from "@/constants/Fonts";
 import Label from "@/components/shared/Label";
+import Container from "@/components/shared/Container";
 
 
 export default function WebHome() {
@@ -20,9 +21,10 @@ export default function WebHome() {
 
   return (
     <ThemeProvider value={combinedTheme}>
-      <View style={styles.container}>
-      <Label lightColor="grey" style={styles.heading4} text="Home" />
-      </View>
+    <Container style={styles.container}>
+   <Label lightColor="grey" style={styles.heading4} text="Home" />
+   <Label lightColor="grey"  text="Home" />
+  </Container>
     </ThemeProvider>
   );
 }
