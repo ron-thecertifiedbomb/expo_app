@@ -5,9 +5,9 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Text, View, StyleSheet, Button } from "react-native";
+import {  View, StyleSheet } from "react-native";
 import { fonts } from "@/constants/Fonts";
-import { Redirect, useRouter } from "expo-router";
+import { Label } from "@/components/shared/Label";
 
 export default function WebHome() {
   const colorScheme = useColorScheme();
@@ -16,11 +16,11 @@ export default function WebHome() {
     ...currentTheme,
     fonts,
   };
-  const router = useRouter();
+
   return (
     <ThemeProvider value={combinedTheme}>
       <View style={styles.container}>
-        <Text style={styles.heading4}>Desktop</Text>
+        <Label lightColor='grey' style={styles.heading4}>Welcome Screen</Label>
       </View>
     </ThemeProvider>
   );
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   heading4: {
-    fontSize: fonts.heading.h4.fontSize,
-    fontFamily: fonts.heading.h4.fontFamily,
-    lineHeight: fonts.heading.h4.lineHeight, // Ensure this is a number
+    fontSize: 22,
+    fontFamily: 'FS Albert-Regular',
+    lineHeight: fonts.heading.h4.lineHeight, 
   },
 });
