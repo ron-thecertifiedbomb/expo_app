@@ -5,32 +5,36 @@ export type LabelProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
+  text: string;
 };
 
-export function Label({
+const Label: React.FC<LabelProps> = ({
   style,
   lightColor,
   darkColor,
   type = "default",
+  text,
   ...rest
-}: LabelProps) {
+}) => {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
 
   return (
     <Text
       style={[
         { color },
-        type === "default" ? styles.default : undefined,
-        type === "title" ? styles.title : undefined,
-        type === "defaultSemiBold" ? styles.defaultSemiBold : undefined,
-        type === "subtitle" ? styles.subtitle : undefined,
-        type === "link" ? styles.link : undefined,
+        type === "default" && styles.default,
+        type === "title" && styles.title,
+        type === "defaultSemiBold" && styles.defaultSemiBold,
+        type === "subtitle" && styles.subtitle,
+        type === "link" && styles.link,
         style,
       ]}
       {...rest}
-    />
+    >
+      {text}
+    </Text>
   );
-}
+};
 
 const styles = StyleSheet.create({
   default: {
@@ -57,3 +61,5 @@ const styles = StyleSheet.create({
     color: "#0a7ea4",
   },
 });
+
+export default Label;
