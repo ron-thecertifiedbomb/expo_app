@@ -5,8 +5,7 @@ import { StyleSheet } from "react-native";
 
 const Home = () => (
   <Container>
-  
-    <Label lightColor="grey" customTextStyle={styles.heading4} text="Home" />
+    <Label customTextStyle={styles.heading4} text="Home" />
   </Container>
 );
 
