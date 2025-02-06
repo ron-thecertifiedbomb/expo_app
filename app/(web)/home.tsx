@@ -20,7 +20,7 @@ export default function WebHome() {
   return (
     <ThemeProvider value={combinedTheme}>
       <View style={styles.container}>
-        <Label lightColor='grey' style={styles.heading4}>Welcome Screen</Label>
+        <Label lightColor='grey' style={styles.heading4}>Home</Label>
       </View>
     </ThemeProvider>
   );

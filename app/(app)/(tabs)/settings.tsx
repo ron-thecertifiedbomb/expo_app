@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
   heading4: {
     fontSize: 22  ,
-    fontFamily: fonts.heading.h4.fontFamily,
+    fontFamily: 'FS Albert-Regular',
     lineHeight: fonts.heading.h4.lineHeight, // Ensure this is a number
   },
 });
