@@ -1,13 +1,15 @@
 import Container from "@/components/shared/Container";
-import Icon from "@/components/shared/Icon";
 import Label from "@/components/shared/Label";
 import { fonts } from "@/constants/Fonts";
 import { StyleSheet } from "react-native";
 
 const Settings = () => (
   <Container>
-    <Icon name="settings-outline" size={41} color="grey" type="Ionicons" />
-    <Label lightColor="grey" customTextStyle={styles.heading4} text="Settings" />
+    <Label
+      lightColor="grey"
+      customTextStyle={styles.heading4}
+      text="Settings"
+    />
   </Container>
 );
 
