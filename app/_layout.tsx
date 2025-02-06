@@ -4,7 +4,14 @@ import { useEffect, Suspense } from "react";
 import "react-native-reanimated";
 import React from "react";
 import { Slot } from "expo-router";
-import { View, Text } from "react-native"; // Import UI components for fallback
+import { View, Text } from "react-native";
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
+import { useColorScheme } from "@/hooks/useColorScheme"; // Import UI components for fallback
+import { fonts } from "@/constants/Fonts";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -16,6 +23,13 @@ export default function RootLayout() {
     "FS Albert-Regular": require("../assets/fonts/FSAlbert-Regular.otf"),
     "FS Albert-Light": require("../assets/fonts/FSAlbert-Light.otf"),
   });
+
+  const colorScheme = useColorScheme();
+  const currentTheme = colorScheme === 'dark' ? DarkTheme : DefaultTheme;
+  const combinedTheme = {
+    ...currentTheme,
+    fonts,
+  };
 
   useEffect(() => {
     if (loaded) {
@@ -36,7 +50,9 @@ export default function RootLayout() {
 
   return (
     <Suspense fallback={<FallbackUI />}>
-      <Slot />
+      <ThemeProvider value={combinedTheme}>
+        <Slot />
+      </ThemeProvider>
     </Suspense>
   );
 }
