@@ -9,6 +9,7 @@ import {  StyleSheet } from "react-native";
 import { fonts } from "@/constants/Fonts";
 import Container from "@/components/shared/Container";
 import Icon from "@/components/shared/Icon";
+import Label from "@/components/shared/Label";
 
 
 
@@ -24,7 +25,8 @@ export default function WebHome() {
   return (
     <ThemeProvider value={combinedTheme}>
     <Container style={styles.container}>
-    <Icon name="home" size={40} color="grey" type="MaterialCommunityIcons" />
+    <Label lightColor="grey" style={styles.heading4} text="Home Screen" />
+
   </Container>
     </ThemeProvider>
   );
