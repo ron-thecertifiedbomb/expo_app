@@ -1,10 +1,24 @@
-import RoutingComponent from "@/components/RoutingComponent";
-import { Slot } from "expo-router";
-import React, { Suspense } from "react"; // Import Suspense
-import { View } from "react-native";
+import { Redirect, Stack } from "expo-router";
+import { Platform } from "react-native";
 
-// Fallback UI: A loading spinner or any other UI to show while content is loading
-
-export default function AppLayout() {
-  return <Slot />;
+export default function RootLayout() {
+  if (Platform.OS === "web") {
+    return <Redirect href="/(web)/home" />;
+  } else {
+    return (
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: "transparent" },
+        }}
+      >
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack>
+    );
+  }
 }
