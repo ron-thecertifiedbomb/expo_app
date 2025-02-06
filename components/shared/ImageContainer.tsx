@@ -1,13 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Image, ImageStyle, ViewStyle } from "react-native";
 
-interface ImageComponentProps {
+interface ImageContainerProps {
   source: any;
   style?: ImageStyle;
   containerStyle?: ViewStyle;
 }
 
-const ImageComponent: React.FC<ImageComponentProps> = ({
+const ImageContainer: React.FC<ImageContainerProps> = ({
   source,
   style,
   containerStyle,
@@ -16,14 +16,14 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
     <View style={[styles.imageContainer, containerStyle]}>
       <Image
         source={source}
-        style={[styles.image, style]}
+        style={[styles.imageStyle, style]}
         resizeMode="contain"
       />
     </View>
   );
 };
 
-export default ImageComponent;
+export default ImageContainer;
 
 const styles = StyleSheet.create({
   imageContainer: {
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  image: {
+  imageStyle: {
     height: "100%",
     width: "100%",
   },
