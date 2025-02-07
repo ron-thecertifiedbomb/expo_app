@@ -1,20 +1,10 @@
-import Container from "@/components/shared/Container";
-import Label from "@/components/shared/Label";
-import { fonts } from "@/constants/Fonts";
-import { StyleSheet } from "react-native";
+import AppHeader from "@/components/app/appHeader/AppHeader";
+import SafeContainer from "@/components/shared/SafeAreaViewContainer";
 
 const Home = () => (
-  <Container>
-    <Label customTextStyle={styles.heading4} text="Home" />
-  </Container>
+  <SafeContainer style={{ backgroundColor: "yellow", padding: 10 }}>
+    <AppHeader />
+  </SafeContainer>
 );
-
-const styles = StyleSheet.create({
-  heading4: {
-    fontSize: 22,
-    fontFamily: "FS Albert-Regular",
-    lineHeight: fonts.heading.h4.lineHeight,
-  },
-});
 
 export default Home;
