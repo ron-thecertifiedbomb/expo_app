@@ -41,3 +41,17 @@ export type Theme = {
   };
   fonts: Fonts;
 };
+
+
+
+// iconTypes.ts
+export type IconType = 
+  | "AntDesign" 
+  | "Entypo" 
+  | "EvilIcons" 
+  | "Feather" 
+  | "FontAwesome" 
+  | "Ionicons" 
+  | "MaterialIcons" 
+  | "MaterialCommunityIcons";
+

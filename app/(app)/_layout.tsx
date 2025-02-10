@@ -3,7 +3,7 @@ import { Platform } from "react-native";
 
 export default function RootLayout() {
   if (Platform.OS === "web") {
-    return <Redirect href="/(web)/home" />;
+    return <Redirect href="/(web)/home" />; // Redirect to the web home screen
   } else {
     return (
       <Stack
@@ -12,8 +12,16 @@ export default function RootLayout() {
           contentStyle: { backgroundColor: "transparent" },
         }}
       >
+        {/* Mobile Screens (Tabs) */}
         <Stack.Screen
-          name="(tabs)"
+          name="(tabs)" // Ensure this is the correct screen name for the mobile tabs
+          options={{
+            headerShown: false,
+          }}
+        />
+        {/* Profile Screen for Mobile */}
+        <Stack.Screen
+          name="profile" // Ensure this matches your profile screen route
           options={{
             headerShown: false,
           }}
