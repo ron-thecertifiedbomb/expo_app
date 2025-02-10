@@ -42,8 +42,6 @@ export type Theme = {
   fonts: Fonts;
 };
 
-
-
 // iconTypes.ts
 export type IconType = 
   | "AntDesign" 

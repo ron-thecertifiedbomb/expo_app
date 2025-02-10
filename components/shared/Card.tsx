@@ -13,7 +13,7 @@ interface CardProps {
   onPress: () => void;
   iconColor?: string; // Separate iconColor prop
   labelColor?: string; // Separate labelColor prop
-  customStyle?: ViewStyle;
+  customContainerStyle?: ViewStyle;
   size?: number;
 }
 
@@ -22,13 +22,13 @@ const Cards: React.FC<CardProps> = ({
   onPress,
   iconColor = "grey", // Default icon color
   labelColor = "black", // Default label color
-  customStyle,
+  customContainerStyle,
   size = 40,
 }) => {
   const { iconName, iconType, iconLabel } = item; // Destructure 'item' instead of 'card'
 
   return (
-    <Pressable onPress={onPress} style={({ pressed }) => [styles.container, pressed && styles.pressed, customStyle]}>
+    <Pressable onPress={onPress} style={({ pressed }) => [styles.container, pressed && styles.pressed, customContainerStyle]}>
       <Icon name={iconName} size={size} color={iconColor} type={iconType} />
       <View style={styles.labelContent} />
       <Label lightColor={labelColor} text={iconLabel} />
