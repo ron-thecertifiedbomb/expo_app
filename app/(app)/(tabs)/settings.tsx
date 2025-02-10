@@ -5,11 +5,7 @@ import { StyleSheet } from "react-native";
 
 const Settings = () => (
   <Container>
-    <Label
-      lightColor="grey"
-      customTextStyle={styles.heading4}
-      text="Settings"
-    />
+    <Label customTextStyle={styles.heading4} text="Settings" />
   </Container>
 );
 

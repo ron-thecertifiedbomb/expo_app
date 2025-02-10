@@ -1,22 +1,28 @@
-import React from "react";
-import { SafeAreaView, StyleSheet, ViewStyle } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { View, StyleSheet, ViewStyle } from "react-native";
+import { ReactNode } from "react";
 
 interface SafeContainerProps {
-  children: React.ReactNode; // Accept children as a prop
-  style?: ViewStyle; // Optional additional styles
+  children: ReactNode;
+  style?: ViewStyle; // Allow custom styles for the inner View
 }
 
 const SafeContainer: React.FC<SafeContainerProps> = ({ children, style }) => {
   return (
-    <SafeAreaView style={[styles.container, style]}>{children}</SafeAreaView>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={[styles.container, style]}>{children}</View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
-    padding: 16,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "white",
+  },
+  container: {
+  
+    paddingHorizontal: 16, // Default margin
   },
 });
 

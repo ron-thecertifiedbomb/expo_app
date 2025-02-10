@@ -39,5 +39,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+const Home = () => (
+  <SafeContainer style={{ backgroundColor: "yellow", padding: 10 }}>
+    <AppHeader />
+  </SafeContainer>
+);
 
 export default Home;
