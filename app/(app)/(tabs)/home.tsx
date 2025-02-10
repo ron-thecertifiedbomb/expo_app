@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, Pressable } from "react-native";
 import Container from "@/components/shared/Container";
-import { useNavigation } from "@react-navigation/native"; // Import the useNavigation hook
-import { Link, useRouter } from "expo-router";
+import {  useRouter } from "expo-router";
 
 const Home = () => {
   const router = useRouter();
