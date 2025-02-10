@@ -1,36 +1,44 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, Pressable } from "react-native";
 import Container from "@/components/shared/Container";
-import { content } from "@/mockData/cards/data"; // Example data
-import List from "@/components/shared/List";
-import Cards from "@/components/shared/Card"; // Example Card component
+import { useNavigation } from "@react-navigation/native"; // Import the useNavigation hook
+import { Link, useRouter } from "expo-router";
 
-const Home = () => (
-  <Container>
-    <List
-      data={content} // Your data
-      onPressItem={(item) => console.log(item)} // Handle item press
-      Component={Cards} // Pass Cards component as the prop
-      customStyle={styles.container} // Pass custom styles for card container
-    />
-  </Container>
-);
+const Home = () => {
+  const router = useRouter();
+
+  const goToProfile = () => {
+    router.push("/profile");
+  };
+
+  return (
+    <Container>
+      <Pressable style={styles.button} onPress={goToProfile}>
+        <Text style={styles.buttonText}>Go to Profile</Text>
+      </Pressable>
+    </Container>
+  );
+};
 
 const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: "#fff",
+  button: {
+    backgroundColor: "#007BFF",
+    paddingVertical: 12,
+    paddingHorizontal: 30,
     borderRadius: 8,
-    width: 120,
-    margin: 8,
     elevation: 2,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
+    marginTop: 20,
   },
-
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 });
 
 export default Home;

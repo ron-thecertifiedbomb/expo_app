@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Pressable, ViewStyle } from "react-native";
+import { StyleSheet, Pressable, ViewStyle, View } from "react-native";
 import Icon from "./Icon";
 import Label from "./Label";
 import { IconType } from "@/interfaces/types";
@@ -30,7 +30,9 @@ const Cards: React.FC<CardProps> = ({
   return (
     <Pressable onPress={onPress} style={({ pressed }) => [styles.container, pressed && styles.pressed, customStyle]}>
       <Icon name={iconName} size={size} color={iconColor} type={iconType} />
+      <View style={styles.labelContent} />
       <Label lightColor={labelColor} text={iconLabel} />
+      <View/>
     </Pressable>
   );
 };
@@ -49,6 +51,9 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.9,
+  },
+  labelContent: {
+    marginTop: 10,
   },
 });
 
