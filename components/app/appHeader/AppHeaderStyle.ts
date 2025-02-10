@@ -9,10 +9,8 @@ export const appHeaderStyles = (): appHeaderStyles => {
   return {
     content: {
       backgroundColor: 'rgba(255, 255, 0, 0.0)',
-      width: '100%',  // Full width
-      flex: 1,         // Ensures the container fills available space
-      justifyContent: 'center', // Centers content vertically
-      alignItems: 'center', // Centers content horizontally
+      gap: 10, // Full width // Ensures the container fills available spa
+      flexDirection: 'row',
     },
     textStyle: {
       fontSize: 24,   // Set font size

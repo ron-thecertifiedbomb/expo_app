@@ -2,6 +2,7 @@ import React from "react";
 import { TextStyle, View, ViewStyle } from "react-native";
 import Label from "@/components/shared/Label";
 import { appHeaderStyles } from "./AppHeaderStyle";
+import Icon from "@/components/shared/Icon";
 
 // Define the prop types for AppHeader
 interface AppHeaderProps {
@@ -20,6 +21,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
   return (
     <>
       <View style={[content, containerStyle]}>
+      <Icon name="arrow-left" color="black" type="Feather" />
         <Label
           lightColor="grey"
           text={text}

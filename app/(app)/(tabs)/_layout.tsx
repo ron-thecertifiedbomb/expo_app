@@ -18,7 +18,7 @@ export default function TabsLayout() {
           title: "Home",
           headerTitle: () => (
             <AppHeader
-              text={headerTitle} // Pass the pathname as header text
+              text="Home" // Pass the pathname as header text
               containerStyle={content} // Custom container styles
               customTextStyle={textStyle} // Custom label styles
             />
@@ -35,7 +35,7 @@ export default function TabsLayout() {
           title: "Settings",
           headerTitle: () => (
             <AppHeader
-            text={headerTitle} // Pass the pathname as header text
+            text="Settings" // Pass the pathname as header text
             containerStyle={content} // Custom container styles
             customTextStyle={textStyle} // Custom label styles
           />
