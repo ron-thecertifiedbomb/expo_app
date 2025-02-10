@@ -2,8 +2,6 @@ import React from "react";
 import { StyleSheet, Text, Pressable } from "react-native";
 import Container from "@/components/shared/Container";
 import {  useRouter } from "expo-router";
-import AppHeader from "@/components/app/appHeader/AppHeader";
-
 
 const Home = () => {
   const router = useRouter();
@@ -13,9 +11,11 @@ const Home = () => {
   };
 
   return (
-    <>
-   
-    </>
+    <Container>
+      <Pressable style={styles.button} onPress={goToProfile}>
+        <Text style={styles.buttonText}>Go to Profile</Text>
+      </Pressable>
+    </Container>
   );
 };
 
@@ -39,6 +39,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-
 
 export default Home;
