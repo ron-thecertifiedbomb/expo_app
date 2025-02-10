@@ -1,8 +1,12 @@
 import React from "react";
 import Icon from "@/components/shared/Icon";
-import { Tabs } from "expo-router";
+import { Tabs, usePathname } from "expo-router";
+import AppHeader from "@/components/app/appHeader/AppHeader"; // Import AppHeader
+import { appHeaderStyles } from "@/components/app/appHeader/AppHeaderStyle";
 
 export default function TabsLayout() {
+  const headerTitle = usePathname(); // Get the current pathname
+  const { content, textStyle } = appHeaderStyles();
   return (
     <Tabs
       initialRouteName="home"
@@ -12,16 +16,39 @@ export default function TabsLayout() {
         name="home"
         options={{
           title: "Home",
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => <Icon name="home" size={size} color={color} type="AntDesign" />,
+          headerTitle: () => (
+            <AppHeader
+              text="Home" // Pass the pathname as header text
+              containerStyle={content} // Custom container styles
+              customTextStyle={textStyle} // Custom label styles
+            />
+          ),
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="home" size={size} color={color} type="AntDesign" />
+          ),
+       
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
           title: "Settings",
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => <Icon name="settings-outline" size={size} color={color} type="Ionicons" />,
+          headerTitle: () => (
+            <AppHeader
+            text="Settings" // Pass the pathname as header text
+            containerStyle={content} // Custom container styles
+            customTextStyle={textStyle} // Custom label styles
+          />
+          ),
+          tabBarIcon: ({ color, size }) => (
+            <Icon
+              name="settings-outline"
+              size={size}
+              color={color}
+              type="Ionicons"
+            />
+          ),
+       
         }}
       />
     </Tabs>
