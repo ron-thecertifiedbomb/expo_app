@@ -1,32 +1,36 @@
 import React from "react";
-import { StyleSheet, Pressable } from "react-native";
+import { StyleSheet, Pressable, ViewStyle } from "react-native";
 import Icon from "./Icon";
 import Label from "./Label";
 import { IconType } from "@/interfaces/types";
 
-interface Card {
-  iconName?: string; // Assuming single icon, use string instead of string[]
-  iconType?: IconType;
-  iconLabel?: string;
-}
-
 interface CardProps {
-  card: Card;  // Singular for clarity
-  onPress?: () => void;
+  item: { // Change from 'card' to 'item'
+    iconName: string;
+    iconType: IconType;
+    iconLabel: string;
+  };
+  onPress: () => void;
+  iconColor?: string; // Separate iconColor prop
+  labelColor?: string; // Separate labelColor prop
+  customStyle?: ViewStyle;
+  size?: number;
 }
 
-const Cards: React.FC<CardProps> = ({ card, onPress }) => {
+const Cards: React.FC<CardProps> = ({
+  item,
+  onPress,
+  iconColor = "grey", // Default icon color
+  labelColor = "black", // Default label color
+  customStyle,
+  size = 40,
+}) => {
+  const { iconName, iconType, iconLabel } = item; // Destructure 'item' instead of 'card'
+
   return (
-    <Pressable
-      onPress={onPress}
-      style={({ pressed }) => [styles.container, pressed && styles.pressed]}
-    >
-      {card.iconName && (
-        <Icon name={card.iconName} size={40} color="grey" type={card.iconType} />
-      )}
-      {card.iconLabel && (
-        <Label lightColor="grey" text={card.iconLabel} />
-      )}
+    <Pressable onPress={onPress} style={({ pressed }) => [styles.container, pressed && styles.pressed, customStyle]}>
+      <Icon name={iconName} size={size} color={iconColor} type={iconType} />
+      <Label lightColor={labelColor} text={iconLabel} />
     </Pressable>
   );
 };
