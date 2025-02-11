@@ -1,16 +1,18 @@
 import { TextStyle, ViewStyle } from "react-native";
 
 interface appHeaderStyles {
-  content: ViewStyle;
+  container: ViewStyle;
   textStyle: TextStyle;
 }
 
 export const appHeaderStyles = (): appHeaderStyles => {
   return {
-    content: {
-      backgroundColor: 'rgba(255, 255, 0, 0.0)',
-      gap: 10, // Full width // Ensures the container fills available spa
+    container: {
+      backgroundColor: 'white',
+      gap: 10, 
       flexDirection: 'row',
+      padding: 10,
+  alignItems: 'center',
     },
     textStyle: {
       fontSize: 24,   // Set font size

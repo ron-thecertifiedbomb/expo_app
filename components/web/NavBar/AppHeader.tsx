@@ -2,8 +2,8 @@ import React from "react";
 import { View } from "react-native";
 import Label from "@/components/shared/Label";
 import useIsMobile from "@/helper.tsx/useMoblie";
-import Icon from "../shared/Icon";
-import { headerStyles } from "./AppHeaderStyle";
+import Icon from "../../shared/Icon";
+import { headerStyles } from "./NavBarStyle";
 
 const AppHeader: React.FC = () => {
 

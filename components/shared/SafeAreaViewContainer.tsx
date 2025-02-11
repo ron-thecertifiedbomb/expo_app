@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   container: {
   
-    paddingHorizontal: 16, // Default margin
+    paddingHorizontal: 0, // Default margin
   },
 });
 

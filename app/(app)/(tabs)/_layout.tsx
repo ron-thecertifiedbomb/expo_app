@@ -1,12 +1,10 @@
 import React from "react";
 import Icon from "@/components/shared/Icon";
-import { Tabs, usePathname } from "expo-router";
-import AppHeader from "@/components/app/appHeader/AppHeader"; // Import AppHeader
-import { appHeaderStyles } from "@/components/app/appHeader/AppHeaderStyle";
+import { Tabs } from "expo-router";
+import AppHeader from "@/components/app/Header/Header"; // Import AppHeader
+import { appHeaderStyles } from "@/components/app/Header/HeaderStyle";
 
 export default function TabsLayout() {
-  const headerTitle = usePathname(); // Get the current pathname
-  const { content, textStyle } = appHeaderStyles();
   return (
     <Tabs
       initialRouteName="home"
@@ -16,30 +14,16 @@ export default function TabsLayout() {
         name="home"
         options={{
           title: "Home",
-          headerTitle: () => (
-            <AppHeader
-              text="Home" // Pass the pathname as header text
-              containerStyle={content} // Custom container styles
-              customTextStyle={textStyle} // Custom label styles
-            />
-          ),
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Icon name="home" size={size} color={color} type="AntDesign" />
           ),
-       
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
           title: "Settings",
-          headerTitle: () => (
-            <AppHeader
-            text="Settings" // Pass the pathname as header text
-            containerStyle={content} // Custom container styles
-            customTextStyle={textStyle} // Custom label styles
-          />
-          ),
           tabBarIcon: ({ color, size }) => (
             <Icon
               name="settings-outline"
@@ -48,7 +32,6 @@ export default function TabsLayout() {
               type="Ionicons"
             />
           ),
-       
         }}
       />
     </Tabs>

@@ -26,6 +26,12 @@ export default function RootLayout() {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="options" // Ensure this matches your profile screen route
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
     );
   }

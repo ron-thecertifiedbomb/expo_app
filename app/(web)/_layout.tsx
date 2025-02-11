@@ -2,7 +2,7 @@
 import React from "react";
 import { Redirect, Slot } from "expo-router";
 import { atom, useAtom } from "jotai";
-import AppHeader from "@/components/home/AppHeader";
+import AppHeader from "@/components/web/NavBar/AppHeader";
 import { authAtom } from "../(app)/store";
 
 
