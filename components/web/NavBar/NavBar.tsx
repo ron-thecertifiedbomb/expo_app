@@ -3,15 +3,15 @@ import { View } from "react-native";
 import Label from "@/components/shared/Label";
 import useIsMobile from "@/helper.tsx/useMoblie";
 import Icon from "../../shared/Icon";
-import { headerStyles } from "./NavBarStyle";
+import { navBarStyles } from "./NavBarStyle";
 
-const AppHeader: React.FC = () => {
+const NavBar: React.FC = () => {
 
   const isMobile = useIsMobile();
-  const { textStyle, subHeaderContainer, iconStyle } = headerStyles(isMobile);
+  const { textStyle, navBarContainer, iconStyle } = navBarStyles(isMobile);
 
   return (
-    <View style={subHeaderContainer}>
+    <View style={navBarContainer}>
       <Label
         lightColor="grey"
         customTextStyle={textStyle}
@@ -27,4 +27,4 @@ const AppHeader: React.FC = () => {
 
 // Define styles using StyleSheet
 
-export default AppHeader;
+export default NavBar;
