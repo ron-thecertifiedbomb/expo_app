@@ -12,10 +12,13 @@ import {
 } from "@react-navigation/native";
 import { useColorScheme } from "@/hooks/useColorScheme"; // Import UI components for fallback
 import { fonts } from "@/constants/Fonts";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const queryClient = new QueryClient();
+
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     "FS Albert-Bold": require("../assets/fonts/FSAlbert-Bold.otf"),
@@ -25,7 +28,7 @@ export default function RootLayout() {
   });
 
   const colorScheme = useColorScheme();
-  const currentTheme = colorScheme === 'dark' ? DarkTheme : DefaultTheme;
+  const currentTheme = colorScheme === "dark" ? DarkTheme : DefaultTheme;
   const combinedTheme = {
     ...currentTheme,
     fonts,
@@ -50,9 +53,11 @@ export default function RootLayout() {
 
   return (
     <Suspense fallback={<FallbackUI />}>
-      <ThemeProvider value={combinedTheme}>
-        <Slot />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider value={combinedTheme}>
+          <Slot />
+        </ThemeProvider>
+      </QueryClientProvider>
     </Suspense>
   );
 }
