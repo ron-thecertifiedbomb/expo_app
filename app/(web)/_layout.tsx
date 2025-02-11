@@ -7,7 +7,6 @@ import NavBar from "@/components/web/NavBar/NavBar";
 export default function WebLayout() {
   const [isAuthenticated] = useAtom(authAtom);
 
-  // ✅ If not authenticated, redirect to login (`/`)
   if (!isAuthenticated) {
     return <Redirect href="/" />;
   }
