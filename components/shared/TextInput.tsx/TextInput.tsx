@@ -8,6 +8,8 @@ interface FormTextInputProps {
   label: string;
   rules?: any;
   errors?: any;
+  keyboardType?: 'default' | 'email-address' | 'numeric' | 'phone-pad' | 'decimal-pad'; // Add more options if needed
+  secureTextEntry?: boolean;
 }
 
 const FormTextInput: React.FC<FormTextInputProps> = ({
@@ -16,6 +18,8 @@ const FormTextInput: React.FC<FormTextInputProps> = ({
   label,
   rules,
   errors,
+  keyboardType = 'default', // Default to 'default'
+  secureTextEntry = false,  // Allow secureTextEntry for password fields
 }) => {
   return (
     <Controller
@@ -30,7 +34,8 @@ const FormTextInput: React.FC<FormTextInputProps> = ({
             value={value}
             style={styles.input}
             placeholder={label}
-            keyboardType="phone-pad"
+            keyboardType={keyboardType}
+            secureTextEntry={secureTextEntry} // For password field
           />
           {errors && errors[name] && (
             <Text style={styles.error}>{errors[name].message}</Text>
@@ -49,7 +54,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 8,
     borderRadius: 5,
-    marginBottom: 10,
+    marginBottom: 2, // Add space between fields
   },
   error: {
     color: 'red',

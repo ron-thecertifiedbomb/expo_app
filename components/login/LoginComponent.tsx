@@ -59,6 +59,7 @@ const LogInForm: React.FC = () => {
           label="Password"
           rules={{ required: "Password is required" }}
           errors={errors}
+          secureTextEntry={true}
         />
 
         {error && <Text style={{ color: "red", marginTop: 5 }}>{error}</Text>}
