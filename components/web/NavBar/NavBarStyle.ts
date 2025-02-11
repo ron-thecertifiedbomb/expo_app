@@ -2,16 +2,16 @@ import { ViewStyle, TextStyle } from "react-native";
 
 interface HeaderStyles {
   iconStyle: ViewStyle;
-  subHeaderContainer: ViewStyle;
+  navBarContainer: ViewStyle;
   textStyle: TextStyle;
 }
 
-export const headerStyles = (isMobile: boolean): HeaderStyles => {
+export const navBarStyles = (isMobile: boolean): HeaderStyles => {
   return {
     iconStyle: {
       opacity: isMobile ? 1 : 0,
     },
-    subHeaderContainer: {
+    navBarContainer: {
       flexDirection: "row",
       justifyContent: "space-between",
       alignItems: "center",

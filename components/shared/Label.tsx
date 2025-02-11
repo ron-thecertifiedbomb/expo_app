@@ -1,8 +1,16 @@
-import { Text, type TextProps, StyleSheet, View, TextStyle } from "react-native"; // Import TextStyle
+import {
+  Text,
+  type TextProps,
+  StyleSheet,
+  View,
+  TextStyle,
+  ViewStyle,
+} from "react-native"; // Import TextStyle
 import { useThemeColor } from "@/hooks/useThemeColor";
 
 export type LabelProps = TextProps & {
-  customTextStyle?: TextStyle;  // Use TextStyle for custom text styles
+  customTextStyle?: TextStyle;
+  customTextContainerStyle?: ViewStyle; // Use TextStyle for custom text styles
   lightColor?: string;
   darkColor?: string;
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
@@ -11,6 +19,7 @@ export type LabelProps = TextProps & {
 
 const Label: React.FC<LabelProps> = ({
   customTextStyle,
+  customTextContainerStyle,
   lightColor,
   darkColor,
   type = "default",
@@ -20,7 +29,14 @@ const Label: React.FC<LabelProps> = ({
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
 
   return (
-    <View>
+    <View
+      style={[
+        styles.container,
+        customTextContainerStyle, // Use TextStyle for custom text styles
+        // custom text style applied here
+        ,
+      ]}
+    >
       <Text
         style={[
           { color },
@@ -44,6 +60,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
   },
+  container: {
+    padding: 0,
+  },
+
   defaultSemiBold: {
     fontSize: 16,
     lineHeight: 24,

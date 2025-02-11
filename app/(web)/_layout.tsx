@@ -1,10 +1,8 @@
-
 import React from "react";
 import { Redirect, Slot } from "expo-router";
 import { atom, useAtom } from "jotai";
-import AppHeader from "@/components/home/AppHeader";
 import { authAtom } from "../(app)/store";
-
+import NavBar from "@/components/web/NavBar/NavBar";
 
 export default function WebLayout() {
   const [isAuthenticated] = useAtom(authAtom);
@@ -16,7 +14,7 @@ export default function WebLayout() {
 
   return (
     <>
-      <AppHeader />
+      <NavBar />
       <Slot />
     </>
   );
