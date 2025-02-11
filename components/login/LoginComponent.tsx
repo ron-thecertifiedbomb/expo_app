@@ -45,9 +45,7 @@ const LogInForm: React.FC = () => {
 
   return (
     <Container style={styles.container}>
-      <View
-        style={logInStyles.formContent}
-      >
+      <View style={logInStyles.formContent}>
         <FormTextInput
           control={control}
           name="username"

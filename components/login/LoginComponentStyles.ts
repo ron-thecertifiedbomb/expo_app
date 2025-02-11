@@ -7,9 +7,9 @@ interface LogInFormStyles {
 export const LogInFormStyles = (isMobile: boolean): LogInFormStyles => {
   return {
     formContent: {
-      width: isMobile ? "100%" : 500,
-      paddingLeft: 15,
-      paddingRight: 15,
+      width: isMobile ? "100%" : 400,
+      paddingLeft: 50,
+      paddingRight: 50,
       alignSelf: "center",
       display: "flex",
       gap: 10,
