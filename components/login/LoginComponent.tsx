@@ -8,8 +8,12 @@ import FormTextInput from "../shared/TextInput.tsx/TextInput";
 import Button from "../shared/Button/Button";
 import { useAuthenticateUser } from "@/hooks/useAuthenticateUser";
 import Container from "../shared/Container";
-
+import { LogInFormStyles } from "./LoginComponentStyles";
+import useIsMobile from "@/helpers.tsx/useMoblie";
 const LogInForm: React.FC = () => {
+  const isMobile = useIsMobile();
+  const logInStyles = LogInFormStyles(isMobile);
+
   const navigation = useNavigation();
   const {
     control,
@@ -37,17 +41,12 @@ const LogInForm: React.FC = () => {
 
   // Navigation to registration page
   const handleNavigateToRegistration = () =>
-    navigation.navigate("RegistrationPage" as never);
+    navigation.navigate("registration" as never);
 
   return (
     <Container style={styles.container}>
       <View
-        style={{
-          width: "80%",
-          alignSelf: "center",
-          display: "flex",
-          gap: 10,
-        }}
+        style={logInStyles.formContent}
       >
         <FormTextInput
           control={control}
@@ -84,6 +83,8 @@ const LogInForm: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

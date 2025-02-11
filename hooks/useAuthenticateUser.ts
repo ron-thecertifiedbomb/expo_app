@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { Alert } from "react-native";
+import { Alert, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useRouter } from "expo-router"; // Use this for web navigation
 import { User } from "@/components/login/types";
-
 
 const authenticateUser = async (data: User): Promise<any> => {
   const response = await fetch(
@@ -12,7 +12,7 @@ const authenticateUser = async (data: User): Promise<any> => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    }
+    },
   );
 
   if (!response.ok) {
@@ -24,18 +24,21 @@ const authenticateUser = async (data: User): Promise<any> => {
 };
 
 export const useAuthenticateUser = () => {
-  const navigation = useNavigation();
+  const router = useRouter(); // Expo Router for web
   const [error, setError] = useState<string | null>(null);
 
   const mutation = useMutation({
     mutationFn: authenticateUser,
     onSuccess: () => {
-      Alert.alert("Success", "Authentication successful", [
-        {
-          text: "OK",
-          onPress: () => navigation.navigate("DrawerNavigator" as never),
-        },
-      ]);
+      const target = Platform.OS === "web" ? "/(web)/home" : "DrawerNavigator";
+
+      if (Platform.OS === "web") {
+        router.push("/(web)/home"); // This is the correct URL for web navigation
+      } else {
+        router.push("/(app)/(tabs)/home");
+      }
+
+      Alert.alert("Success", "Authentication successful");
     },
     onError: (error: Error) => {
       console.error("Login Error:", error);
