@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import Label from "@/components/shared/Label";
-import useIsMobile from "@/helper.tsx/useMoblie";
+import useIsMobile from "@/helpers.tsx/useMoblie";
 import Icon from "../../shared/Icon";
 import { navBarStyles } from "./NavBarStyle";
 

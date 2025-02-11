@@ -5,14 +5,13 @@ import { StyleSheet } from "react-native";
 
 const ProfileScreen = () => (
   <SafeContainer style={styles.container}>
-     <HeaderSection text="Profile" />
-
+    <HeaderSection text="Profile" />
   </SafeContainer>
 );
 
 const styles = StyleSheet.create({
   container: {
- flex: 1,
+    flex: 1,
   },
 });
 
